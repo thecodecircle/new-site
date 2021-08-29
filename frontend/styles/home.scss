@@ -1,0 +1,635 @@
+/*  */
+
+body {
+	color: $text-color;
+	a {
+		color: $text-color;
+		&:visited {
+			color: $text-color;
+		}
+	}
+}
+
+.min-width-300 {
+	min-width: 300px;
+}
+
+.p-text {
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+}
+
+.dd {
+	color: inherit;
+}
+
+.rotate90 {
+	transform: rotate(90deg);
+}
+
+.rotate180 {
+	transform: rotate(180deg);
+}
+
+.rotate270 {
+	transform: rotate(270deg);
+}
+
+.w-4screen {
+	width: 400vw;
+}
+
+.stickyness {
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 0;
+}
+
+.tranfrom-center {
+	transform: translate(-50%, -50%);
+}
+
+.image-cover {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.overlay {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay-lg {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.h-32rem {
+	height: 32rem;
+}
+
+.h-20rem {
+	height: 20rem;
+}
+
+nav {
+	z-index: 9999;
+}
+
+.z-9999 {
+	z-index: 9999;
+}
+
+.hidden {
+	display: none;
+}
+
+.ui-effects-wrapper {
+	margin-top: 1rem;
+}
+
+#lib-logo {
+	color: white;
+	line-height: 16px;
+	padding: 2px 7px;
+	border-radius: 8px;
+	font-family: "Suez One", serif;
+	border-right: 3px solid white;
+	border-left: 3px solid white;
+}
+
+#scrollToTop {
+	z-index: 9999;
+	cursor: pointer;
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 0.25rem;
+	padding-right: 0.25rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	@include md {
+		padding-right: 0.5rem;
+		padding-bottom: 0.5rem;
+		width: 3rem;
+		height: 3rem;
+	}
+}
+
+#scrollToTop:active,
+#scrollToTop:focus {
+	outline: 0;
+	border: none;
+	-moz-outline-style: none;
+}
+
+.grad {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(110deg, #472b62 60%, #bc4873 60%);
+}
+
+.next:active,
+.next:focus {
+	outline: 0;
+	border: none;
+	-moz-outline-style: none;
+}
+
+.er {
+	color: red;
+	float: left;
+}
+
+// .form {
+// 	background: #fff;
+// 	border-radius: 8px;
+// 	box-shadow: 0 0 40px -10px #000;
+// 	margin: calc(50vh - 220px) auto;
+// 	padding: 20px 30px;
+// 	max-width: calc(100vw - 40px);
+// 	box-sizing: border-box;
+// 	font-family: "Montserrat", sans-serif;
+// 	position: relative;
+// }
+
+.hands {
+	background-image: url("/images/hands.webp");
+	background-position: center;
+	/* Center the image */
+	background-repeat: no-repeat;
+	/* Do not repeat the image */
+	background-size: cover;
+}
+
+.bb {
+	float: right;
+	padding: 8px 12px;
+	margin: 8px 0 0;
+	font-family: "Montserrat", sans-serif;
+	border: 2px solid #78788c;
+	background: 0;
+	color: #5a5a6e;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.bb:hover {
+	background: #78788c;
+	color: #fff;
+}
+
+// gallery
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.leading-big {
+	line-height: 2 !important;
+}
+
+.infos {
+	min-height: 60%;
+}
+
+.gradient {
+	background: rgb(0, 138, 125);
+	background: $grad;
+}
+
+.text-gradient {
+	background: rgb(0, 156, 141);
+	background: $text-grad;
+}
+
+.gradient-reverse {
+	background: linear-gradient(225deg, #d53369 0%, #daae51 100%);
+}
+
+.hero-height {
+	height: 100vh;
+	@include desktop {
+		height: 90vh;
+	}
+}
+
+.projects-grid {
+	display: grid;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2rem;
+	justify-items: center;
+	padding-bottom: 4rem;
+	gap: 1.5rem;
+	@include lg {
+		grid-template-columns: repeat(3, 1fr) !important;
+	}
+	@include md {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	> a {
+		&.clickable {
+			cursor: pointer;
+		}
+		color: white;
+		border-radius: 0.75rem;
+		width: 100%;
+		aspect-ratio: 1;
+		transition: background-size 400ms;
+		background: var(--color) var(--img) no-repeat center;
+		background-size: 100%;
+		&:hover {
+			background-size: 110%;
+		}
+		> div {
+			height: 100%;
+			background: black;
+			border-radius: 0.75rem;
+			opacity: 0;
+			transition: opacity 300ms;
+			background: rgba(0, 0, 0, 0.5);
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			&:hover {
+				opacity: 1;
+			}
+			h1 {
+				font-size: 2rem;
+				font-weight: bold;
+				line-height: 2.25rem;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+				color: white;
+			}
+			p {
+				color: white;
+				padding: 1.5rem;
+				padding-left: 2rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+.mb-1 {
+	margin-bottom: 0.25rem;
+}
+
+.we-believe {
+	line-height: 1.5;
+	letter-spacing: 0em;
+	color: white;
+}
+
+#hero {
+	display: flex;
+	align-items: center;
+	@include md {
+		padding-top: 4rem;
+	}
+	.hero-container {
+		width: 100%;
+		height: 100%;
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		@include md {
+			height: auto;
+			flex-direction: row;
+		}
+		.hero-right {
+			display: flex;
+			flex: 1 1;
+			flex-direction: column;
+			width: 100%;
+			justify-content: center;
+			text-align: center;
+			@include md {
+				width: 40%;
+				align-items: flex-start;
+				text-align: right;
+			}
+		}
+		.hero-logo {
+			margin-bottom: 0.5rem;
+			height: 1.25rem;
+			@include md {
+				height: 2rem;
+			}
+		}
+		.hero-tagline {
+			width: 100%;
+			font-size: 1.875rem;
+			line-height: 2.25rem;
+			font-weight: bold;
+			text-align: right;
+			letter-spacing: 0.025em;
+			@include md {
+				height: auto;
+				font-size: 3rem;
+				line-height: 1;
+			}
+		}
+		.hero-description {
+			text-align: right;
+			font-size: 1rem;
+			line-height: 1.5;
+			margin-top: 1rem;
+			height: auto;
+		}
+		.contact {
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #ffffff;
+			font-weight: 700;
+			border-radius: 9999px;
+			margin-top: 1rem;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			box-shadow: $shadow-xl;
+			color: $text-color;
+			border: 2px solid transparent;
+			transition: 200ms background, 200ms border-color;
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				background: transparent;
+				color: white;
+				border: 2px solid white;
+			}
+			@include lg {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+		}
+		.hero-left {
+			width: 100%;
+			text-align: center;
+			display: none;
+			padding-bottom: 0.5rem;
+			@include md {
+				display: block;
+				width: 60%;
+			}
+			.hero-img {
+				width: 100%;
+				z-index: 50;
+				float: left;
+				width: 80%;
+			}
+		}
+	}
+}
+
+.wave {
+	position: relative;
+	width: 100%;
+	display: block;
+	transform: translateY(5%);
+	&-down {
+		transform: translateY(-5%) rotate(180deg);
+	}
+}
+
+.section-title {
+	display: flex;
+	width: 100%;
+	background: #fff;
+	height: 8rem;
+	> div {
+		width: 100%;
+		align-self: center;
+
+		h1 {
+			font-size: 3rem;
+			line-height: 1;
+			text-align: center;
+		}
+	}
+}
+
+.section-content {
+	@include md {
+		margin-left: 8rem;
+		margin-right: 8rem;
+	}
+	&.contact {
+		margin: 0;
+		padding-bottom: 10%;
+
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 0.125rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			justify-items: center;
+			@include md {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+			@include lg {
+				display: grid;
+			}
+			.contact-form {
+				margin-bottom: 2.5rem;
+				background: white;
+				box-shadow: $shadow-xl;
+				margin: auto;
+				min-width: 300px;
+				width: 75%;
+				border-radius: 0.5rem;
+				padding: 4rem;
+				@include md {
+					margin-bottom: 0;
+					width: 66.6%;
+				}
+				#after-submit {
+					display: none;
+					color: white;
+					font-size: 1.5rem;
+					line-height: 2rem;
+					width: 100%;
+					border: 2px solid white;
+					border-radius: 0.5rem;
+					padding: 1.5rem;
+				}
+				form {
+					h1 {
+						font-weight: bold;
+						font-size: 1.25rem;
+						line-height: 1.75rem;
+						margin-bottom: 0.5rem;
+						height: 100%;
+					}
+					.input-wrapper {
+						margin-bottom: 1.25rem;
+						position: relative;
+						input,
+						textarea {
+							display: block;
+							width: 100%;
+							padding: 10px;
+							box-sizing: border-box;
+							background: none;
+							outline: none;
+							resize: none;
+							border: 0;
+							font-family: "Montserrat", sans-serif;
+							transition: all 0.3s;
+							border-bottom: 2px solid #bebed2;
+							&:focus {
+								border-bottom: 2px solid #78788c;
+							}
+							&.error {
+								background: rgba(255, 0, 0, 0.3);
+							}
+						}
+						label {
+							opacity: 0;
+							position: absolute;
+							top: -10%;
+							transition: opacity 200ms;
+						}
+						input:focus + label,
+						textarea:focus + label {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.contact-info {
+				text-align: center;
+				box-shadow: $shadow-xl;
+				border-radius: 0.5rem;
+				background: white;
+				margin: 0 8rem;
+				padding: 1.5rem;
+				font-size: 1.5rem;
+				line-height: 2rem;
+				.social {
+					display: flex;
+					justify-content: center;
+					margin-top: 1rem;
+					gap: 1.25rem;
+					img {
+						height: 3rem;
+					}
+				}
+			}
+		}
+	}
+	.mate-quote {
+		display: flex;
+		justify-content: center;
+		font-size: 1.125rem;
+		line-height: 1.625;
+		min-height: 60%;
+		text-align: right;
+		color: white;
+		padding: 2.5rem;
+		@include md {
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+		}
+		@include lg {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+		p {
+			@include lg {
+				width: 75%;
+			}
+		}
+	}
+	.row {
+		width: 100%;
+		@include lg {
+			display: flex;
+			&:last-child {
+				flex-direction: row-reverse;
+			}
+		}
+		.img-div {
+			@include lg {
+				flex-shrink: 0;
+				width: 50%;
+			}
+			img {
+				border-radius: 0.5rem;
+				width: 100%;
+				object-fit: cover;
+				box-shadow: $shadow-xl;
+				@include lg {
+					height: 100%;
+				}
+			}
+		}
+		.text-div {
+			height: 32rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: center;
+			@include lg {
+				margin-left: 2rem;
+				margin-right: 2rem;
+			}
+			// &.second {
+			// 	align-self: center;
+			// 	@include lg {
+			// 		width: 50%;
+			// 	}
+			// }
+			p {
+				background: transparent;
+				color: white;
+				display: flex;
+				align-items: center;
+				width: 75%;
+				box-shadow: $shadow-xl;
+				border: 4px solid white;
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				@include md {
+					width: 100%;
+					font-size: 1.25rem;
+					line-height: 1.75;
+				}
+				@include lg {
+					font-size: 1.5rem;
+					line-height: 2;
+				}
+			}
+		}
+	}
+}

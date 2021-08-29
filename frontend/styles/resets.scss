@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Rubik", sans-serif;
+	font-display: swap;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+h1,
+h2 {
+	margin: 0;
+	font-weight: normal;
+}
+a {
+	text-decoration: none;
+	&:visited {
+		text-decoration: none;
+		color: initial;
+	}
+}
+
+h2 {
+	/* color: purple; */
+}

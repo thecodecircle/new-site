@@ -1,0 +1,28 @@
+- title: המטה
+  desc: תוכנה לרישום נוכחות למכינות, תנועות נוער ובתי ספר
+  img: mate_mobile.jpg
+  url: https://mate.codecircle.co.il
+
+- title: תערוכת אנילביץ'
+  desc: תערוכה וירטואלית למכון השואה מורשת
+  img: moreshet.webp
+  url: https://moreshet.herokuapp.com
+
+- title: המרד בהכחדה ישראל
+  desc: אתר תדמית לתנועת המרד בהכחדה ישראל
+  img: xr.webp
+  url: https://xrisrael.earth
+
+- title: מכינת חביבה
+  desc: אפליקציית ניהול המידע לחניכי המכינה הקדם צבאית ע"ש חביבה רייק
+  img: haviva.webp
+
+- title: המסלולים
+  desc: אתר תדמית למסלולי שנת השירות של תנועת השומר הצעיר
+  img: maslulim.webp
+  color: "#3A4899"
+  url: https://maslulim.netlify.app
+
+- title: ארכיון תנועת הבוגרים של השומר הצעיר
+  desc: תוכנת ארכיון לשימור ידע וניהול צוותי עבודה
+  img: archy.svg

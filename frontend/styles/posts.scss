@@ -1,0 +1,21 @@
+body.post {
+    main {
+        width: 50%;
+        margin: auto;
+        h1,
+        h2 {
+            font-weight: bold;
+            margin: 1em 0;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
+            // color: red;
+        }
+    }
+}

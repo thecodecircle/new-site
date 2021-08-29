@@ -1,0 +1,242 @@
+---
+layout: default
+---
+
+
+
+<!-- אנחנו מאמינים -->
+<div class="we-believe gradient">
+    <!--Hero-->
+    <div id="hero" class="hero-height ">
+        <div class="hero-container">
+            <!--Right Col-->
+            <div class="hero-right ">
+                <div class="mb-1">
+                    <img class="hero-logo " src="/images/very-white-logo.svg" alt="our logo">
+                    <h1 class="hero-tagline">כשחינוך וטכנולוגיה נפגשים</h1>
+                </div>
+                <div class="modal-open hero-description" id="modal-open1">
+                    <div>
+                        <div>אנחנו מאמינים שאנחנו יכולים לשנות את העולם. בגלל זה החלטנו ליצור אפליקציות שישחררו אתכם
+                            להתעסק במה שחשוב באמת - חינוך</div>
+                    </div>
+                </div>
+                <a id="hero-contact" href="#contact" class="contact ">דברו איתנו</a>
+            </div>
+            <!--left Col-->
+            <div class="hero-left ">
+                <img class="hero-img" src="/images/hero.svg">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {% svg "/images/transition.svg", class: "wave" %}
+
+</div>
+
+
+<div class="text-gradient">
+
+
+    <!-- מי אנחנו -->
+    <div class="section-title " id="about">
+        <div>
+            <h1>
+                מי אנחנו
+            </h1>
+        </div>
+    </div>
+
+    {% svg "/images/transition.svg", class: "wave-down" %}
+    <div class="section-content">
+
+        <!-- אנחנו אנשי חינוך -->
+        <div class="row">
+            <div class="img-div">
+                <img src="/images/hands.webp" alt="hands together">
+            </div>
+            <div class="text-div">
+                <p>
+                    אנחנו ירדן שפנר וגיא נתן, מתכנתים מתנועת הבוגרים של השומר הצעיר.<br>מתוך הרצון לשנות את העולם
+                    לטובה ומתוך נסיון חינוכי עשיר, אנחנו רוצים לתת מענה טכנולוגי חדשני לבעיות עולם החינוך
+                </p>
+            </div>
+        </div>
+
+
+        <!-- העבודה שלנו -->
+        <div class="row">
+            <div class="img-div">
+                <img src="/images/field.webp" alt="a girl in a youth movement building">
+            </div>
+            <div class="text-div second">
+                <p>
+                    אנחנו אנשי שטח, שמכירים ומבינים את חייו של המחנך הפורמלי והבלתי פורמלי. לא יצאנו מיחידות מחשבים
+                    מיוחדות, אלא התמקצענו דרך עבודה קשה של פיתוח כלי עזר לחינוך שלנו.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    {% svg "/images/transition.svg", class: "wave" %}
+
+</div>
+
+
+
+<!-- העבודה שלנו מדברת -->
+<div id="projects" class="section-title">
+    <div>
+        <h1>
+            העבודה מדברת בעד עצמה
+        </h1>
+    </div>
+</div>
+
+<div class="text-gradient">
+
+
+    {% svg "/images/transition.svg", class: "wave-down" %}
+
+    <div class="section-content">
+
+        <!-- העבודה שלנו -->
+        <div class="mate-quote ">
+            <p>
+                "<strong>המטה</strong> קיצר תהליכים - הוריד את זמן ההמתנה לעדכון נוכחות בחצי, שיפר את היכולת להפיק מידע
+                קריטי בשניות, והפך את המידע להרבה יותר חסוי ופרטי. פינה את הצוות להתעסק בחניכים עצמם" - קטיה נובק וגלעד
+                מנטל, תנועת השומר הצעיר
+            </p>
+        </div>
+
+
+
+        <div class="projects-grid">
+            {% for project in site.data.projects %}
+            <a aria-label='אתר {{project.title}}' {% if project.url and project.url !="" %} target='_blank'
+                href='{{ project.url | default: "#projects" }}' class='clickable' {% endif %}
+                style="--img: url('/images/{{ project.img }}'); --color: {{ project.color | default: 'white' }}">
+                <div>
+                    <h1>{{ project.title }}</h1>
+                    <p>{{ project.desc }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {% svg "/images/transition.svg", class: "wave" %}
+</div>
+
+
+<!-- יצירת קשר -->
+<div class="section-title" id="contact">
+    <div>
+        <h1>
+            דברו איתנו
+        </h1>
+    </div>
+</div>
+
+
+<div class="text-gradient section-content contact">
+    {% svg "/images/transition.svg", class: "wave-down" %}
+
+    <div class="contact-grid ">
+        <div class="contact-form">
+            <div id="after-submit" class="">
+                קיבלנו את ההודעה, נדבר בקרוב!
+            </div>
+            <script type="text/javascript">
+                var submitted = false;
+            </script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) {alert('קיבלנו את ההודעה שלך! נחזור אליך')}"></iframe>
+            <form class="simple_form new_quiz" id="form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSevChCS7dHyNKmsAblpmgUS8EgpiGElU-AeO68oFmfKIBv9-Q/formResponse"
+                target="hidden_iframe" onsubmit="submitted=true;" method="post">
+
+                <h1 class=""></h1>
+                <div class="input-wrapper">
+                    <input id="name" placeholder="מה שמך?" class="" required="required" type="text"
+                        name="entry.877023693">
+                    <label for="name">שם</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="phone" placeholder="מה הטלפון שלך?" class="" type="tel" pattern="\d*"
+                        title="חייב להיות מספר" name="entry.1109802569">
+                    <label for="phone">טלפון</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input id="email" placeholder="מה המייל שלך?" class="" required="required" type="email"
+                        name="entry.2031525116">
+                    <label for="email">מייל</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <textarea rows=5 id="message" placeholder="מה תרצה/י לומר לנו?" name="entry.102170778"></textarea>
+                    <label for="message">הודעה</label>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" name="commit" value="שליחה" class="btn bb" data-disable-with="שליחה">
+                </div>
+            </form>
+        </div>
+
+        <!-- פרטי קשר -->
+        <div class="contact-info ">
+            <div>
+                <a href="mailto:codecircle13@gmail.com" aria-label="email us">codecircle13@gmail.com</a>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/%D7%94%D7%A7%D7%95%D7%93-%D7%94%D7%A9%D7%95%D7%9E%D7%A8%D7%99-109072317196522"
+                    aria-label="go to our facebook">
+                    <img class="" src="/images/facebook_circle.webp" alt="logo of facebook">
+                </a>
+                <a href="https://www.instagram.com/code_circle/" aria-label="go to our instagram">
+                    <img class="" src="/images/instagram_logo.webp" alt="logo of instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<a href="#main" aria-label="scroll to top">
+    <img id="scrollToTop" class="" src="/images/scroll2.svg" width="50" height="50"
+        alt="click to scroll to top of page">
+</a>
+
+<script type="text/javascript">
+    const header = document.querySelector("#headerNav")
+    const scroll_top = document.querySelector("#scrollToTop")
+    const menu_btn = document.querySelector("#menu-btn")
+    const menu = document.querySelector("#menu")
+    if (window.scrollY > 100) {
+        header.classList.add("show")
+        scroll_top.classList.add("show")
+    } else {
+        header.classList.remove("show")
+        scroll_top.classList.remove("show")
+    }
+    document.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+            header.classList.add("show")
+            scroll_top.classList.add("show")
+        } else {
+            header.classList.remove("show")
+            scroll_top.classList.remove("show")
+        }
+    });
+    menu_btn.addEventListener("click", () => {
+        menu.classList.toggle('hidden')
+    })
+</script>

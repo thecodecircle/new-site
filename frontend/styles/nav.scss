@@ -1,0 +1,159 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+nav {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 30;
+	top: 0;
+	left: 0;
+	background: white;
+	box-shadow: $shadow;
+	transition: 200ms opacity, 200ms transform;
+	transform-origin: top;
+	transform: scaleY(0);
+	&.show {
+		transform: scale(1);
+	}
+	.wrapper {
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem 5%;
+		.logo-wrapper {
+			padding-left: 1rem;
+			display: flex;
+			align-items: center;
+			a {
+				text-decoration: none;
+				font-weight: bold;
+				padding: 0 1rem;
+				font-size: 1.5rem;
+				line-height: 2rem;
+				display: grid;
+				place-items: center;
+				&:hover {
+					text-decoration: none;
+				}
+				@include lg {
+					font-size: 2.25rem;
+					line-height: 2.5rem;
+				}
+				img {
+					height: 2rem;
+				}
+			}
+		}
+		.menu-btn-wrapper {
+			display: block;
+			padding-right: 1rem;
+			@include lg {
+				display: none;
+			}
+			button {
+				display: flex;
+				align-items: center;
+				padding: 0.25rem;
+				color: gray;
+				&:hover,
+				&:focus {
+					color: black;
+				}
+				svg {
+					color: currentColor;
+					height: 1.5rem;
+					width: 1.5rem;
+				}
+			}
+		}
+		.menu {
+			width: 100%;
+			flex-grow: 1;
+			display: none;
+			margin-top: 0.5rem;
+			background: white;
+			padding: 1rem;
+			z-index: 20;
+			@include lg {
+				padding: 0;
+				background: transparent;
+				margin-top: 0;
+				display: flex;
+				align-items: center;
+				width: auto;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				justify-content: flex-end;
+				align-items: center;
+				flex: 1 1 0%;
+
+				@include lg {
+					display: flex;
+				}
+				li {
+					margin-right: 0.75rem;
+					a {
+						&:visited {
+							color: $text-color;
+						}
+						color: $text-color;
+						display: inline-block;
+						text-decoration: none;
+						padding: 0.5rem 1rem;
+						&:hover,
+						&:focus {
+							text-decoration: underline !important;
+							color: darken($color: $text-color, $amount: 20%);
+						}
+					}
+					&:last-child {
+						a {
+							margin-bottom: 1rem;
+							@include lg {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+			a.contact-btn {
+				margin: 1.5rem auto;
+				color: white;
+				background: white;
+				font-weight: bold;
+				border-radius: 1000px;
+				padding: 0.75rem 2rem;
+				box-shadow: $shadow;
+				opacity: 0.75;
+				background: $grad;
+				transition: 200ms opacity;
+				&:hover,
+				&:focus {
+					opacity: 1;
+				}
+				@include lg {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+#scrollToTop {
+	transition: 200ms opacity, 200ms transform;
+}
+
+#scrollToTop.show {
+	transform: scale(1);
+}
+
+#scrollToTop {
+	transform: scale(0);
+}
