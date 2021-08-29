@@ -8,7 +8,7 @@ import "index.scss"
 const componentsContext = require.context("bridgetownComponents", true, /.js$/)
 componentsContext.keys().forEach(componentsContext)
 
-console.info("Bridgetown is loaded!")
+// console.info("Bridgetown is loaded!")
 const application = Application.start()
 const context = require.context("./controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
