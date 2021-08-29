@@ -15,13 +15,13 @@ layout: default
                     <img class="hero-logo " src="/images/very-white-logo.svg" alt="our logo">
                     <h1 class="hero-tagline">כשחינוך וטכנולוגיה נפגשים</h1>
                 </div>
-                <div class="modal-open hero-description" id="modal-open1">
+                <div class="hero-description">
                     <div>
                         <div>אנחנו מאמינים שאנחנו יכולים לשנות את העולם. בגלל זה החלטנו ליצור אפליקציות שישחררו אתכם
                             להתעסק במה שחשוב באמת - חינוך</div>
                     </div>
+                    <a id="hero-contact" href="#contact" class="contact ">דברו איתנו</a>
                 </div>
-                <a id="hero-contact" href="#contact" class="contact ">דברו איתנו</a>
             </div>
             <!--left Col-->
             <div class="hero-left ">
@@ -216,27 +216,27 @@ layout: default
 </a>
 
 <script type="text/javascript">
-    const header = document.querySelector("#headerNav")
+    const nav = document.querySelector("nav")
     const scroll_top = document.querySelector("#scrollToTop")
-    const menu_btn = document.querySelector("#menu-btn")
+    const menuBtn = document.querySelector("#menu-btn")
     const menu = document.querySelector("#menu")
     if (window.scrollY > 100) {
-        header.classList.add("show")
+        nav.classList.add("show")
         scroll_top.classList.add("show")
     } else {
-        header.classList.remove("show")
+        nav.classList.remove("show")
         scroll_top.classList.remove("show")
     }
     document.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
-            header.classList.add("show")
+            nav.classList.add("show")
             scroll_top.classList.add("show")
         } else {
-            header.classList.remove("show")
+            nav.classList.remove("show")
             scroll_top.classList.remove("show")
         }
     });
-    menu_btn.addEventListener("click", () => {
-        menu.classList.toggle('hidden')
+    menuBtn.addEventListener("click", () => {
+        menu.classList.toggle('show')
     })
 </script>

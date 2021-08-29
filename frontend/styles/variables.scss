@@ -16,3 +16,11 @@ $text-grad: linear-gradient(
 	#015dc3 42%,
 	#6202b6 95%
 );
+
+$animate-btn: hover 400ms ease-out infinite alternate;
+
+@keyframes hover {
+	to {
+		transform: translateY(-10%);
+	}
+}

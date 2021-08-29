@@ -304,8 +304,11 @@ nav {
 #hero {
 	display: flex;
 	align-items: center;
+
 	@include md {
 		padding-top: 4rem;
+		margin-left: 8rem;
+		margin-right: 8rem;
 	}
 	.hero-container {
 		width: 100%;
@@ -331,7 +334,7 @@ nav {
 			text-align: center;
 			@include md {
 				width: 40%;
-				align-items: flex-start;
+				align-items: center;
 				text-align: right;
 			}
 		}
@@ -344,6 +347,7 @@ nav {
 		}
 		.hero-tagline {
 			width: 100%;
+			max-width: 500px;
 			font-size: 1.875rem;
 			line-height: 2.25rem;
 			font-weight: bold;
@@ -356,53 +360,59 @@ nav {
 			}
 		}
 		.hero-description {
+			max-width: 500px;
 			text-align: right;
 			font-size: 1rem;
 			line-height: 1.5;
 			margin-top: 1rem;
 			height: auto;
-		}
-		.contact {
-			margin-left: auto;
-			margin-right: auto;
-			background-color: #ffffff;
-			font-weight: 700;
-			border-radius: 9999px;
-			margin-top: 1rem;
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-			padding-left: 2rem;
-			padding-right: 2rem;
-			box-shadow: $shadow-xl;
-			color: $text-color;
-			border: 2px solid transparent;
-			transition: 200ms background, 200ms border-color;
-			&:hover,
-			&:focus {
-				text-decoration: none;
-				background: transparent;
-				color: white;
-				border: 2px solid white;
-			}
-			@include lg {
-				margin-left: 0px;
-				margin-right: 0px;
+			.contact {
+				display: block;
+				width: fit-content;
+				margin-left: auto;
+				margin-right: auto;
+				background-color: #ffffff;
+				font-weight: 700;
+				border-radius: 9999px;
+				margin-top: 1rem;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				padding-left: 2rem;
+				padding-right: 2rem;
+				box-shadow: $shadow-xl;
+				color: $text-color;
+				border: 2px solid transparent;
+				transition: 200ms background, 200ms border-color, 200ms transform;
+				&:hover,
+				&:focus {
+					// transform: translateY(-10%);
+					text-decoration: none;
+					// background: transparent;
+					// color: white;
+					// border: 2px solid white;
+					animation: $animate-btn;
+				}
+
+				@include lg {
+					margin-left: 0px;
+					margin-right: 0px;
+				}
 			}
 		}
 		.hero-left {
-			width: 100%;
+			width: 50%;
 			text-align: center;
 			display: none;
 			padding-bottom: 0.5rem;
-			@include md {
+			@include lg {
 				display: block;
-				width: 60%;
+				// width: 60%;
 			}
 			.hero-img {
 				width: 100%;
 				z-index: 50;
 				float: left;
-				width: 80%;
+				// width: 80%;
 			}
 		}
 	}

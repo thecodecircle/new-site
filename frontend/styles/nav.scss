@@ -22,7 +22,10 @@ nav {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		@include lg {
+			justify-content: center;
+		}
 		padding: 1rem 5%;
 		.logo-wrapper {
 			padding-left: 1rem;
@@ -78,6 +81,9 @@ nav {
 			background: white;
 			padding: 1rem;
 			z-index: 20;
+			&.show {
+				display: block;
+			}
 			@include lg {
 				padding: 0;
 				background: transparent;
@@ -131,13 +137,15 @@ nav {
 				border-radius: 1000px;
 				padding: 0.75rem 2rem;
 				box-shadow: $shadow;
-				opacity: 0.75;
+				opacity: 1;
 				background: $grad;
 				transition: 200ms opacity;
 				&:hover,
 				&:focus {
-					opacity: 1;
+					// opacity: 1;
+					animation: $animate-btn;
 				}
+
 				@include lg {
 					margin: 0;
 				}
