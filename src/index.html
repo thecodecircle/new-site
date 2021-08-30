@@ -208,36 +208,3 @@ layout: default
         </div>
     </div>
 </div>
-
-
-
-<a href="#main" aria-label="scroll to top">
-    <img id="scrollToTop" class="" src="/images/scroll2.svg" width="50" height="50"
-        alt="click to scroll to top of page">
-</a>
-
-<script type="text/javascript">
-    const nav = document.querySelector("nav")
-    const scroll_top = document.querySelector("#scrollToTop")
-    const menuBtn = document.querySelector("#menu-btn")
-    const menu = document.querySelector("#menu")
-    if (window.scrollY > 100) {
-        nav.classList.add("show")
-        scroll_top.classList.add("show")
-    } else {
-        nav.classList.remove("show")
-        scroll_top.classList.remove("show")
-    }
-    document.addEventListener("scroll", () => {
-        if (window.scrollY > 100) {
-            nav.classList.add("show")
-            scroll_top.classList.add("show")
-        } else {
-            nav.classList.remove("show")
-            scroll_top.classList.remove("show")
-        }
-    });
-    menuBtn.addEventListener("click", () => {
-        menu.classList.toggle('show')
-    })
-</script>

@@ -105,30 +105,6 @@ nav {
 	border-left: 3px solid white;
 }
 
-#scrollToTop {
-	z-index: 9999;
-	cursor: pointer;
-	position: fixed;
-	bottom: 0;
-	padding-bottom: 0.25rem;
-	padding-right: 0.25rem;
-	width: 2.5rem;
-	height: 2.5rem;
-	@include md {
-		padding-right: 0.5rem;
-		padding-bottom: 0.5rem;
-		width: 3rem;
-		height: 3rem;
-	}
-}
-
-#scrollToTop:active,
-#scrollToTop:focus {
-	outline: 0;
-	border: none;
-	-moz-outline-style: none;
-}
-
 .grad {
 	background: rgb(2, 0, 36);
 	background: linear-gradient(110deg, #472b62 60%, #bc4873 60%);
@@ -305,10 +281,10 @@ nav {
 	display: flex;
 	align-items: center;
 
-	@include md {
+	@include lg {
 		padding-top: 4rem;
-		margin-left: 8rem;
-		margin-right: 8rem;
+		padding-left: 10vw;
+		padding-right: 10vw;
 	}
 	.hero-container {
 		width: 100%;
@@ -331,11 +307,15 @@ nav {
 			flex-direction: column;
 			width: 100%;
 			justify-content: center;
-			text-align: center;
+			text-align: right;
+			> div {
+				display: flex;
+				flex-direction: column;
+				align-items: baseline;
+			}
 			@include md {
 				width: 40%;
 				align-items: center;
-				text-align: right;
 			}
 		}
 		.hero-logo {
@@ -367,10 +347,11 @@ nav {
 			margin-top: 1rem;
 			height: auto;
 			.contact {
-				display: block;
+				display: inline-block;
 				width: fit-content;
+				width: -moz-fit-content;
 				margin-left: auto;
-				margin-right: auto;
+				// margin-right: auto;
 				background-color: #ffffff;
 				font-weight: 700;
 				border-radius: 9999px;
@@ -393,9 +374,10 @@ nav {
 					animation: $animate-btn;
 				}
 
-				@include lg {
+				@include md {
 					margin-left: 0px;
 					margin-right: 0px;
+					display: block;
 				}
 			}
 		}
@@ -447,8 +429,8 @@ nav {
 
 .section-content {
 	@include md {
-		margin-left: 8rem;
-		margin-right: 8rem;
+		margin-left: 10vh;
+		margin-right: 10vh;
 	}
 	&.contact {
 		margin: 0;
@@ -540,7 +522,7 @@ nav {
 				box-shadow: $shadow-xl;
 				border-radius: 0.5rem;
 				background: white;
-				margin: 0 8rem;
+				margin: 0 10vh;
 				padding: 1.5rem;
 				font-size: 1.5rem;
 				line-height: 2rem;

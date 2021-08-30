@@ -1,19 +1,17 @@
-<nav data-controller='nav'>
-
+<nav class='{{ page }}' data-nav-target='nav'>
   <div class="wrapper ">
-
     <div class="logo-wrapper">
       <a id="nav-logo" aria-label="home" class="toggleColour" href="/"><img src="/images/logo.svg" alt="our logo"></a>
     </div>
     <div class="menu-btn-wrapper">
-      <button id="menu-btn">
+      <button data-action='nav#toggle'>
         <svg class="" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>תפריט</title>
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
         </svg>
       </button>
     </div>
-    <div id="menu" class="menu">
+    <div data-nav-target='menu' class="menu">
       <ul class="">
         <!-- <li class="">
           <a class="blog" href="posts">בלוג</a>
@@ -28,6 +26,4 @@
       <a id="navAction" class="gradient contact-btn" href="/#contact">דברו איתנו</a>
     </div>
   </div>
-
-
 </nav>
