@@ -121,6 +121,7 @@ layout: default
                 href='{{ project.url | default: "#projects" }}' class='clickable' {% endif %}
                 style="--img: url('/images/{{ project.img }}'); --color: {{ project.color | default: 'white' }}">
                 <div>
+                    <img src="/images/{{ project.img }}" alt="">
                     <h1>{{ project.title }}</h1>
                     <p>{{ project.desc }}</p>
                 </div>

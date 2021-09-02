@@ -8,7 +8,7 @@ export default class extends Controller {
               this.navTarget.classList.remove("show")
               this.scrollTopTarget.classList.remove("show")
             } else {
-              console.log('add');
+              // console.log('add');
               this.navTarget.classList.add("show")
               this.scrollTopTarget.classList.add("show")
           }
@@ -19,12 +19,11 @@ export default class extends Controller {
       threshold: 1
   });
   if (document.querySelector(".hero-right")) {
-
     observer.observe(document.querySelector(".hero-right"));
   }
 
   let navHeight =  window.getComputedStyle(this.navTarget).height
-  console.log(navHeight);
+  // console.log(navHeight);
   document.documentElement.style.setProperty('--nav-height', navHeight);
   }
   toggle(){

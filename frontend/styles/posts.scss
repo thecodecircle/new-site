@@ -1,7 +1,10 @@
 body.post {
     main {
-        width: 50%;
+        max-width: 90%;
+        width: 60rem;
         margin: auto;
+        padding-top: calc(var(--nav-height) + 1rem);
+        color: black;
         h1,
         h2 {
             font-weight: bold;
@@ -12,10 +15,52 @@ body.post {
         }
         h2 {
             font-size: 2rem;
+            font-weight: normal;
+            padding-bottom: 0.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.288);
         }
         p {
             font-size: 1.5rem;
-            // color: red;
+            line-height: 1.5;
+            
+            font-family: 'Assistant', sans-serif;
+            a{
+                text-decoration: underline;
+                position: relative;
+                &::before{
+                    width: fit-content;
+                    // height: 100px;
+                    content: attr(href);
+                    position: absolute;
+                    background: black;
+                    color: white;
+                    display: none;
+                    top: -100%;
+                    left: -50%;
+                    white-space: nowrap;
+                }
+                &:hover, &:focus{
+                    &::before{
+                        display: block;
+
+                    }
+                }
+            }
+
+        }
+        pre{
+            code {
+                display: block;
+                background: rgba(0, 0, 0, 0.109);
+                padding: 1rem;
+                direction: ltr;
+                white-space: pre-wrap;
+                border-radius: 3px;
+
+            }
+        }
+        img{
+            max-width: 100%;
         }
     }
 }
