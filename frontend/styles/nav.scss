@@ -14,6 +14,7 @@ nav {
 	transform-origin: top;
 	transform: scaleY(0);
 	padding: 0 10%;
+	// height: var(--nav-height);
 	&.show {
 		transform: scale(1);
 	}
