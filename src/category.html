@@ -1,14 +1,17 @@
 ---
 layout: posts
-title: הבלוג השומרי
-permalink: /blog/
+title: ":prototype-term-titleize"
+permalink: /blog/:term
+prototype:
+  term: categories
 ---
+
 
 
 
 <div class="posts">
   
-  {% for post in site.posts %}
+  {% for post in paginator.documents %}
   
   <h1> <a href="{{ post.url}}">
   
@@ -24,15 +27,16 @@ permalink: /blog/
   {% endfor %}
 
 </div>
+
 <div class="list">
-  <h2>
-    קטגוריות
-  </h2>
-  <ul>
-    {% for category in site.categories %}
+    <h2>
+        {{ page.title}}
+    </h2>
+    <ul>
+    {% for post in paginator.documents %}
     <li>
-      <a href="/blog/{{ category[0] }}">{{ category[0] }}</a>
+      <a href="{{ post.url}}">{{ post.title }}</a>
     </li>
     {% endfor %}
   </ul>
-</div>
+  </div>

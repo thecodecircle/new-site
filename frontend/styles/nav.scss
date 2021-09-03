@@ -17,7 +17,9 @@ nav {
 	&.show {
 		transform: scale(1);
 	}
-	&.page, &.post {
+	&.page,
+	&.post,
+	&.posts {
 		transform: scale(1);
 	}
 	.wrapper {

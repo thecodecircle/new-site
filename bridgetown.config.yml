@@ -23,5 +23,5 @@ permalink: pretty
 #
 # base_path: "/" # the subpath of your site, e.g. /blog
 # timezone: America/Los_Angeles
-# pagination:
-#   enabled: true
+pagination:
+  enabled: true
