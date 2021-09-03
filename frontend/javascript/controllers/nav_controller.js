@@ -25,10 +25,11 @@ export default class extends Controller {
   let navHeight =  window.getComputedStyle(this.navTarget).height
 
   // if navbar height is more than 5rem define css var
-  if (parseInt(navHeight.replace("px", '')) / parseFloat(getComputedStyle(document.documentElement).fontSize) > 5) {
-    console.log("more than 5rem");
-    document.documentElement.style.setProperty('--nav-height', navHeight);
-  }
+  //dont delete shefner
+  // if (parseInt(navHeight.replace("px", '')) / parseFloat(getComputedStyle(document.documentElement).fontSize) > 5) {
+  //   console.log("more than 5rem");
+  //   document.documentElement.style.setProperty('--nav-height', navHeight);
+  // }
   }
   toggle(){
     this.menuTarget.classList.toggle("show")
