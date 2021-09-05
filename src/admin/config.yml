@@ -1,19 +1,31 @@
+---
 backend:
-  - name: git-gateway
-  - branch: main
-media_folder: src/images/posts
+  branch: main
+  name: git-gateway
 collections:
-  - name: blog
-    label: Blog
-    folder: src/_posts/
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - create: true
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - label: "Catergories"
-        name: "catergories"
-        widget: "list"
-      - { label: "Content", name: "content", widget: "markdown" }
+      - default: post
+        label: Layout
+        name: layout
+        widget: hidden
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Author
+        name: author
+        widget: string
+      - label: Catergories
+        name: catergories
+        widget: list
+      - label: Content
+        name: content
+        widget: markdown
+    folder: src/_posts/
+    label: Blog
+    name: blog
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+media_folder: src/images/posts
