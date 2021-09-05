@@ -13,5 +13,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "Categories", name: "categories", widget: "list" }
+      - label: "Catergories"
+        name: "catergories"
+        widget: "list"
       - { label: "Content", name: "content", widget: "markdown" }
