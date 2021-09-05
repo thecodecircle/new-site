@@ -11,9 +11,3 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string" }
-      - label: "Catergories"
-        name: "catergories"
-        widget: "list"
-      - { label: "Content", name: "content", widget: "markdown" }
