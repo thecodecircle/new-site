@@ -57,7 +57,7 @@ body.posts {
 				cursor: pointer;
 				&::after {
 					font-family: "Material Icons Outlined";
-					content: "content_paste";
+					content: "content_copy";
 					-webkit-font-feature-settings: "liga";
 					position: absolute;
 					top: 50%;
@@ -70,6 +70,23 @@ body.posts {
 					opacity: 0;
 					transition: opacity 200ms;
 					transform: translateY(-50%);
+				}
+				&::before {
+					content: "!הועתק";
+					position: absolute;
+					inset-inline-end: 0;
+					padding: 1rem;
+					top: -110%;
+					opacity: 0;
+					background: #e3e3e3;
+					transition: opacity 200ms;
+					border-radius: 10px;
+					box-shadow: 0px 0px 10px 2px #00000082;
+				}
+				&.copied {
+					&::before {
+						opacity: 1;
+					}
 				}
 
 				&:hover {
@@ -89,31 +106,5 @@ body.posts {
 	main {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
-	}
-}
-.copy-toast {
-	position: fixed;
-	bottom: 0;
-	left: 10%;
-	width: 80%;
-	background: rgb(199, 199, 199);
-	padding: 1rem;
-	text-align: center;
-	border-radius: 10px 10px 0 0;
-	box-shadow: 0px 0px 10px 2px #00000082;
-	transition: transform 300ms;
-	transform: translateY(100%);
-	&.show {
-		transform: translateY(0);
-	}
-	@include desktop() {
-		width: 20%;
-		right: 0%;
-		left: unset;
-		bottom: unset;
-		top: 30%;
-		transform: translateY(-100%);
-		border-radius: 0 0 10px 10px;
-		box-shadow: 0px 0px 10px 2px #00000082;
 	}
 }
