@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
+<article data-controller='posts'>
+    <h1>{{ page.title }}</h1>
+    
+    <p>
+        {{ page.author }} ・ {{ page.date | date: "%d.%m.%y" }}
+    </p>
+    
+    {{ content }}
 
-<h1>{{ page.title }}</h1>
-
-<p>
-    {{ page.author }} ・ {{ page.date | date: "%d.%m.%y" }}
-</p>
-
-{{ content }}
+    <div class="copy-toast" data-posts-target='toast'>
+        טקסט הועתק!
+    </div>
+</article>

@@ -26,25 +26,22 @@ body.posts {
 
 			font-family: "Assistant", sans-serif;
 			a {
-				text-decoration: underline;
-				position: relative;
-				// &::before {
-				// 	width: fit-content;
-				// 	// height: 100px;
-				// 	content: attr(href);
-				// 	position: absolute;
-				// 	background: black;
-				// 	color: white;
-				// 	display: none;
-				// 	top: -100%;
-				// 	left: -50%;
-				// 	white-space: nowrap;
-				// }
+				// position: relative;
+				background: $text-grad;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				// color: lighten($text-color, 10%);
+				border-radius: 3px;
+				font-weight: 600;
+				// background-color: red;
+				// background-size: 1px;
+				font-family: "Assistant", sans-serif;
 				&:hover,
 				&:focus {
-					&::before {
-						display: block;
-					}
+					text-decoration: underline wavy;
+					text-decoration-color: #015dc3;
+					// -webkit-background-clip: border-box;
+					// -webkit-text-fill-color: white;
 				}
 			}
 		}
@@ -56,6 +53,30 @@ body.posts {
 				direction: ltr;
 				white-space: pre-wrap;
 				border-radius: 3px;
+				position: relative;
+				cursor: pointer;
+				&::after {
+					font-family: "Material Icons Outlined";
+					content: "content_paste";
+					-webkit-font-feature-settings: "liga";
+					position: absolute;
+					top: 50%;
+					inset-inline-end: 1rem;
+					font-size: 1.5rem;
+					// background: red;
+					display: flex;
+					align-items: center;
+					// margin-inline-end: 1rem;
+					opacity: 0;
+					transition: opacity 200ms;
+					transform: translateY(-50%);
+				}
+
+				&:hover {
+					&::after {
+						opacity: 0.6;
+					}
+				}
 			}
 		}
 		img {
@@ -68,5 +89,31 @@ body.posts {
 	main {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
+	}
+}
+.copy-toast {
+	position: fixed;
+	bottom: 0;
+	left: 10%;
+	width: 80%;
+	background: rgb(199, 199, 199);
+	padding: 1rem;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0px 0px 10px 2px #00000082;
+	transition: transform 300ms;
+	transform: translateY(100%);
+	&.show {
+		transform: translateY(0);
+	}
+	@include desktop() {
+		width: 20%;
+		right: 0%;
+		left: unset;
+		bottom: unset;
+		top: 30%;
+		transform: translateY(-100%);
+		border-radius: 0 0 10px 10px;
+		box-shadow: 0px 0px 10px 2px #00000082;
 	}
 }
