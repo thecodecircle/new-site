@@ -2,6 +2,10 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ['nav', 'menu', 'scrollTop']
   connect() {
+    const margin = () => {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector(".hero-logo").offsetTop <= 300)  return '0px 0px 0px 0px'
+      return '-200px 0px 0px 0px'
+    }
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -15,12 +19,13 @@ export default class extends Controller {
       })
   }, {
       root: null,
-      rootMargin: '0%',
+      rootMargin: margin(),
       threshold: 1
   });
-  if (document.querySelector(".hero-right")) {
-    observer.observe(document.querySelector(".hero-right"));
-  }
+  // if (document.querySelector(".hero-right")) {
+  //   observer.observe(document.querySelector(".hero-right"));
+  // }
+  observer.observe(document.querySelector(".hero-logo"));
 
   let navHeight =  window.getComputedStyle(this.navTarget).height
 
